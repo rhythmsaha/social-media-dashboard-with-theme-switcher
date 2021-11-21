@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+    }
+    body {
+        @apply font-Inter min-h-screen dark:bg-very-dark-blue-1;
+    }
+}
+
+@layer components {
+    .centwidth {
+        @apply w-10/12 max-w-7xl mx-auto;
+    }
+
+    .fb {
+        @apply bg-[#198ff5];
+    }
+
+    .twitter {
+        @apply bg-[#1ca0f2];
+    }
+
+    .insta {
+        @apply bg-gradient-to-b from-[#fdc468] to-[#df4996];
+    }
+
+    .yt {
+        @apply bg-[#c4032a];
+    }
+}

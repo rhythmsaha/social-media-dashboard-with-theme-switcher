@@ -1,82 +1,111 @@
-import Head from 'next/head'
+import Head from "next/head";
+import FollowerCard from "../components/FollowerCard";
+import Header from "../components/Header";
+import StatsCard from "../components/StatsCard";
 
 export default function Home() {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    return (
+        <>
+            <Head>
+                <title>Create Next App</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
+            <>
+                <Header />
 
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
+                <main className="centwidth -mt-12 lg:-mt-32">
+                    <section className="grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
+                        <FollowerCard
+                            social="fb"
+                            icon="/images/icon-facebook.svg"
+                            username="@nathanf"
+                            followers={1987}
+                            today={{ type: "up", value: 12 }}
+                        />
+                        <FollowerCard
+                            username="@nathanf"
+                            social="twitter"
+                            icon="/images/icon-twitter.svg"
+                            followers={1044}
+                            today={{ type: "up", value: 99 }}
+                        />
+                        <FollowerCard
+                            username="@realnathanf"
+                            social="insta"
+                            icon="/images/icon-instagram.svg"
+                            followers="11k"
+                            today={{ type: "up", value: 1099 }}
+                        />
+                        <FollowerCard
+                            username="@Nathan F."
+                            social="yt"
+                            icon="/images/icon-youtube.svg"
+                            followers={8239}
+                            today={{ type: "down", value: 144 }}
+                        />
+                    </section>
 
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
+                    <h1 className="text-xl font-bold dark:text-white text-dark-grayish-blue mt-10 ">
+                        Overview - Today
+                    </h1>
 
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
+                    <section className="my-6 grid gap-4 lg:gap-6 lg:grid-cols-2 xl:grid-cols-4">
+                        <StatsCard
+                            item="Page Views"
+                            value={87}
+                            icon="/images/icon-facebook.svg"
+                            today={{ type: "up", value: "3%" }}
+                        />
+                        <StatsCard
+                            item="Likes"
+                            value={52}
+                            icon="/images/icon-facebook.svg"
+                            today={{ type: "down", value: "2%" }}
+                        />
+                        <StatsCard
+                            item="Likes"
+                            value={5462}
+                            icon="/images/icon-instagram.svg"
+                            today={{ type: "up", value: "2257%" }}
+                        />
+                        <StatsCard
+                            item="Profile Views"
+                            value={"52k"}
+                            icon="/images/icon-instagram.svg"
+                            today={{ type: "up", value: "1375%" }}
+                        />
+                        <StatsCard
+                            item="Retweets"
+                            value={117}
+                            icon="/images/icon-twitter.svg"
+                            today={{ type: "up", value: "303%" }}
+                        />
+                        <StatsCard
+                            item="Likes"
+                            value={87}
+                            icon="/images/icon-twitter.svg"
+                            today={{ type: "up", value: "553%" }}
+                        />
+                        <StatsCard
+                            item="Likes"
+                            value={107}
+                            icon="/images/icon-youtube.svg"
+                            today={{ type: "down", value: "19%" }}
+                        />
+                        <StatsCard
+                            item="Total Views"
+                            value={1407}
+                            icon="/images/icon-youtube.svg"
+                            today={{ type: "down", value: "12%" }}
+                        />
+                    </section>
+                </main>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
-    </div>
-  )
+                <footer className="mt-20 lg:mt-52 grid place-items-center h-14 text-gray-500 text-sm">
+                    Challenge completed by Rhythm Saha
+                </footer>
+            </>
+        </>
+    );
 }

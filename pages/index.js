@@ -102,7 +102,7 @@ export default function Home() {
                     </section>
                 </main>
 
-                <footer className="mt-20 lg:mt-48 grid place-items-center h-14 text-gray-500 text-sm">
+                <footer className="mt-20 lg:mt-36 grid place-items-center h-14 text-gray-500 text-sm">
                     Challenge completed by Rhythm Saha
                 </footer>
             </>
